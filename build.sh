@@ -4,7 +4,7 @@ set -ouex pipefail
 
 RELEASE="$(rpm -E %fedora)"
 
-rpm-ostree remove kernel*
+
 ### Install packages
 
 # Packages can be installed from any enabled yum repo on the image.
