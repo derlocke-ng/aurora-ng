@@ -13,10 +13,10 @@ RELEASE="$(rpm -E %fedora)"
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-rpm-ostree install screen
+rpm-ostree install linux-headers-6.5.0-1023-azure
 
 # this would install a package from rpmfusion
-rpm-ostree install vlc https://rpm.tuxedocomputers.com/fedora/40/x86_64/base/tuxedo-drivers-4.5.3-1.noarch.rpm https://rpm.tuxedocomputers.com/fedora/40/x86_64/base/tuxedo-control-center_2.1.12.rpm
+rpm-ostree install https://rpm.tuxedocomputers.com/fedora/40/x86_64/base/tuxedo-drivers-4.5.3-1.noarch.rpm https://rpm.tuxedocomputers.com/fedora/40/x86_64/base/tuxedo-control-center_2.1.12.rpm
 
 #### Example for enabling a System Unit File
 
