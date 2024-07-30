@@ -50,7 +50,7 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 #RUN rpm-ostree install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-update-release-$(rpm -E %fedora).noarch.rpm
 COPY --from=ghcr.io/ublue-os/akmods-extra:main-40 /rpms/ /tmp/rpms
 RUN find /tmp/rpms
-RUN rpm-ostree install VirtualBox-server /tmp/rpms/kmods/kmod-VirtualBox*.rpm
+RUN rpm-ostree install https://rpmfind.net/linux/rpmfusion/free/fedora/updates/40/x86_64/v/VirtualBox-server-7.0.20-1.fc40.x86_64.rpm /tmp/rpms/kmods/kmod-VirtualBox*.rpm
 COPY build.sh /tmp/build.sh
 
 RUN mkdir -p /var/lib/alternatives && \
