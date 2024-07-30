@@ -48,6 +48,7 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 #RUN rpm-ostree install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-update-release-$(rpm -E %fedora).noarch.rpm
+COPY --from=ghcr.io/ublue-os/akmods-extra:main-40 /rpms/ /tmp/rpms
 RUN find /tmp/rpms
 RUN rpm-ostree install VirtualBox-server /tmp/rpms/kmods/kmod-VirtualBox*.rpm
 COPY build.sh /tmp/build.sh
